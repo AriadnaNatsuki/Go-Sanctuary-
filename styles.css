@@ -1,0 +1,28 @@
+/*Selector del elemento canvas*/
+canvas{
+    border: 1px solid black;
+    /*background: aqua;*/
+}
+/*Sobrescribimos las propiedades en nuestras etiquetas html y body por si 
+el navegador por defecto no tuviera en cuenta las del canvas*/
+html,body{
+    width: 100%;
+    height:100%;
+    margin:0;
+    padding:0;
+}
+
+*{
+    box-sizing: border-box;
+}
+#game-intro img{
+    background-size:cover
+}
+/*Selector identificador*/
+/*#game{
+    width: 100%;
+    height: 100vh; /viewport-height: altura de ventana gráfica
+    background-image: url("./Tiles/grass.png");
+    /background-size:cover;
+    background-position: 0 800;
+}*/

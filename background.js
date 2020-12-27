@@ -4,9 +4,17 @@ class Background{
         this.ctx = ctx
         this.width = this.ctx.canvas.width
         this.height = this.ctx.canvas.height
+
+        //Inicializamos los valores de x e y
+        this.x = 0
+        this.y=this.height-200
+        //El fondo se desplazará de derecha a izquierda,de esta manera se simula el movimiento
+        //de nuestro personaje andando hacia la derecha
+        this.vx = -20
+            
         //Rellenamos el area Canvas de azul cielo
-        ctx.fillStyle = "sky"
-        ctx.fillRect(0, 0, this.width, this.height)
+        //this.ctx.fillStyle = "aquamarine"
+        //this.ctx.fillRect(0, 0, this.width, this.height)
         //Definimos nuestro fondo con la imagen del suelo cesped
         this.img = new Image()
         this.img.src = './Tiles/grass.png'
@@ -22,9 +30,12 @@ class Background{
     }
     //Metodo dibujar si el metodo isReady=true (imagen cargada en el servidor)
     draw() {
-        if (this.img.isReady()) {
-            this.ctx.drawImage(this.img, this.x, 0, this.width, this.height)
-        //Cuando nuestro personaje 
+        if (this.isReady()) {
+            //console.log("hola")
+            this.ctx.drawImage(this.img,this.x, this.y, this.width, this.height)
+        //Cuando nuestro personaje avance el fondo se desplazará hacia la izquierda con velocidad negativa vx
+            this.ctx.drawImage(this.img, this.x+this.width, this.y, this.width, this.height)
+            
         }
 
     }
