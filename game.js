@@ -29,7 +29,9 @@ class Game{
         this.background = new Background(this.ctx)
         //Instanciamos la clase arbol para pintar 2 arboles en 2 puntos distintos
         this.tree = new Tree(this.ctx, this.canvas.width / 4, 200)
-        this.tree_2= new Tree(this.ctx, this.canvas.width / 6, 200)
+        this.tree_2 = new Tree(this.ctx, this.canvas.width / 6, 200)
+        //Instanciamos a nuestro personaje (woman por defecto)
+        this.gamer=new Woman(this.ctx, 100, this.canvas.height-300)
         
         
         //Declaramos la canción princial del juego dentro de una constante, ya que es constante
@@ -58,6 +60,7 @@ class Game{
     }
     draw() {
         this.background.draw()
+        this.gamer.draw()
     }
     move() {
         
